@@ -248,27 +248,22 @@ int main()
 
     while (!exit) 
     {
-        // Main Menu:
         printMenu();
-
-        // Get action
+        
         int32_t action;
         printf("Choice: ");
         scanf("%d", &action);
-
-        // Clear the input buffer of any leftover newline characters
+        
         int32_t c;
         while ((c = getchar()) != '\n' && c != EOF) {}
 
         switch (action)
         {
             case 1:
-                // Add Task
                 addTask(&tasks);
                 break;
             
             case 2:
-                // List Tasks
                 listTasks(tasks);
                 printf("Press Enter to return to menu");   
                 getchar();
@@ -281,24 +276,20 @@ int main()
                 break;
 
             case 4:
-                // Remove Task
                 removeTask(&tasks);
                 printf("Press Enter to return to menu");   
                 getchar();
                 break;
 
             case 5:
-                // Save
                 saveTasks(tasks);
                 break;
 
             case 6:
-                // Load
                 loadTasks(&tasks);
                 break;
 
             case 7:
-                // Exit
                 clearScreen();
                 freeArray(&tasks);
                 exit = true;
